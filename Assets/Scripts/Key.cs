@@ -36,5 +36,6 @@ public class Key : MonoBehaviour
         rend.enabled = false;
         cld.enabled = false;
         Destroy(gameObject, 1F);
+        FindObjectOfType<GameManager>().CollectKey();
     }
 }
