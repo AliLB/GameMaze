@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GateAutoOpen : MonoBehaviour
 {
-    public GameObject metalGate;
-    public float raiseDistance;
-
+    public GameObject door;
+    [HideInInspector] public Animator anim;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Player"))
@@ -21,10 +21,15 @@ public class GateAutoOpen : MonoBehaviour
 
     private void openGate()
     {
-        metalGate.transform.position = metalGate.transform.position + new Vector3(0, raiseDistance, 0);
+        anim = door.GetComponent<Animator>();
+        anim.SetBool("Open", true);
+        anim.SetBool("Close", false);
     }
+
     private void closeGate()
     {
-        metalGate.transform.position = metalGate.transform.position + new Vector3(0, -raiseDistance, 0);
+        anim = door.GetComponent<Animator>();
+        anim.SetBool("Close", true);
+        anim.SetBool("Open", false);
     }
 }

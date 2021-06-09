@@ -5,18 +5,17 @@ using UnityEngine.UI;
 
 public class MyGate : MonoBehaviour
 {
-    public Text keyT; 
     public GameObject door;
     [HideInInspector]public Animator anim;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Player") && keyT.text.ToLower().Equals("Key Found".ToLower()))
+        if (other.gameObject.tag.Equals("Player") && FindObjectOfType<GameManager>().IsKeyCollected()==true)
             openGate();
 
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag.Equals("Player") && keyT.text.ToLower().Equals("Key Found".ToLower()))
+        if (other.gameObject.tag.Equals("Player") && FindObjectOfType<GameManager>().IsKeyCollected() == true)
             closeGate();
     }
 

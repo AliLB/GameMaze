@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class soundOnCollide : MonoBehaviour
+public class SoundOnCollide : MonoBehaviour
 {
     public AudioSource source;
     int beg = 0;
