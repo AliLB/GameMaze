@@ -29,13 +29,17 @@ public class Key : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        key = true;
-        KeyT.text = "Key Found";
-        source.Play();
-        lights.enabled = false;
-        rend.enabled = false;
-        cld.enabled = false;
-        Destroy(gameObject, 1F);
-        FindObjectOfType<GameManager>().CollectKey();
+        if (other.tag == "Player")
+        {
+            key = true;
+            KeyT.text = "Key Found";
+            source.Play();
+            lights.enabled = false;
+            rend.enabled = false;
+            cld.enabled = false;
+            Destroy(gameObject, 1F);
+            FindObjectOfType<GameManager>().CollectKey();
+        }
+        
     }
 }

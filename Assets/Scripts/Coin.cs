@@ -29,13 +29,18 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        source.Play();
-        rend.enabled = false;
-        cldr.enabled=false;
-        Destroy(pointlight);
-        Destroy(gameObject, 1F);
-        int prevScore = Int32.Parse(ScoreText.text.Split(' ')[1]);
-        score = prevScore + 1;
-        ScoreText.text = "Score: " + score.ToString();
+        if (other.tag == "Player")
+        {
+            source.Play();
+            rend.enabled = false;
+            cldr.enabled = false;
+            Destroy(pointlight);
+            Destroy(gameObject, 1F);
+            int prevScore = Int32.Parse(ScoreText.text.Split(' ')[1]);
+            score = prevScore + 1;
+            ScoreText.text = "Score: " + score.ToString();
+
+        }
+            
     }
 }

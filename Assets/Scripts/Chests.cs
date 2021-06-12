@@ -33,17 +33,22 @@ public class Chests : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        source.Play();
-        CHrend.enabled = false;
-        CHcldr.enabled = false;
-        COrend.enabled = false;
-        COcldr.enabled = false;
-        Destroy(pointlight);
-        Destroy(gameObject, 1F);
-        int prevScore = Int32.Parse(ScoreText.text.Split(' ')[1]);
-        if (gameObject.name.Equals("Chest (4)"))
-            score = prevScore + 10;
-        else score = prevScore + 5;
-        ScoreText.text = "Score: " + score.ToString();
+        if (other.tag == "Player")
+        {
+            source.Play();
+            CHrend.enabled = false;
+            CHcldr.enabled = false;
+            COrend.enabled = false;
+            COcldr.enabled = false;
+            Destroy(pointlight);
+            Destroy(gameObject, 1F);
+            int prevScore = Int32.Parse(ScoreText.text.Split(' ')[1]);
+            if (gameObject.name.Equals("Chest (4)"))
+                score = prevScore + 10;
+            else score = prevScore + 5;
+            ScoreText.text = "Score: " + score.ToString();
+
+        }
+        
     }
 }
