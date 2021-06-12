@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Leve0l1_1.unity
+    path: Assets/Scenes/Level 1.unity
     guid: 18b2bcb50474c9847851d4619f05663f
   - enabled: 1
-    path: Assets/Scenes/AliLevel.unity
+    path: Assets/Scenes/Level 2.unity
     guid: d30c053230791b849938777f67134c54
   m_configObjects: {}
