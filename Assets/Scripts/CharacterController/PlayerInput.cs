@@ -142,7 +142,7 @@ namespace Invector.vCharacterController
         {
             if (Input.GetKeyDown(jumpInput) && JumpConditions())
             {
-                source.PlayOneShot(audioJump, 0.5F);
+                source.PlayOneShot(audioJump, 1F);
                 cc.Jump();
             }
         }
